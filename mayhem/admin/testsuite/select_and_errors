@@ -1,0 +1,5 @@
+select 1
+SHOW
+SHOW nothing;
+SET = 1
+show "pools"

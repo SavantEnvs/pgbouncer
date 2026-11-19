@@ -1,0 +1,5 @@
+# build-context pruning for `docker build -f mayhem/Dockerfile .` (keeps .git: the image needs full history)
+.objs/
+test/.objs/
+mayhem/.work/
+fuzz_*

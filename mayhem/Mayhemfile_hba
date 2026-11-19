@@ -1,0 +1,9 @@
+project: savantenvs/pgbouncer
+target: hba
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/hba/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_hba
+    libfuzzer: true
+    timeout: 10

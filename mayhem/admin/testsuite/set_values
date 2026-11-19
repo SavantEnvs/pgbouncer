@@ -1,0 +1,6 @@
+SET default_pool_size = 30;
+SET server_reset_query = 'DISCARD ALL';
+set "ignore_startup_parameters" to 'extra_float_digits'
+SET query_timeout = '1.5s'
+SET pool_mode = transaction
+SHOW CONFIG

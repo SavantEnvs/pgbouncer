@@ -1,0 +1,9 @@
+project: savantenvs/pgbouncer
+target: server-login
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/server-login/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_server_login
+    libfuzzer: true
+    timeout: 10

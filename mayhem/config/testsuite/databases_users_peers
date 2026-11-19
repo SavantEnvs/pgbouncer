@@ -1,0 +1,20 @@
+[databases]
+db1 = host=/tmp port=6000 dbname=db1 user=bob password=secret pool_size=5 reserve_pool=2 pool_mode=transaction
+db2 = host=127.0.0.1,::1 port=5432,5433 dbname=x auth_user=bob load_balance_hosts=disable client_encoding=UTF8 datestyle=ISO timezone=UTC
+db3 = connect_query='SELECT 1' application_name=app max_db_connections=3 max_db_client_connections=4 min_pool_size=1 server_lifetime=10 auth_dbname=db1
+* = host=localhost
+[users]
+bob = pool_mode=session max_user_connections=3 pool_size=2 reserve_pool_size=1 query_timeout=10 idle_transaction_timeout=5
+[peers]
+1 = host=/tmp/peer port=7000 pool_size=2
+[pgbouncer]
+listen_port = 6432
+auth_type = trust
+max_client_conn = 200
+default_pool_size = 20
+server_reset_query = DISCARD ALL
+ignore_startup_parameters = extra_float_digits, options
+track_extra_parameters = IntervalStyle, search_path
+server_check_delay = 30
+query_wait_timeout = 1.5h
+peer_id = 1
